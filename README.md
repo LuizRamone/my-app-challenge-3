@@ -1,6 +1,6 @@
 # Usage
 Open postman/insomnia and navigate to http://localhost:9100/[url] , use yarn startserver to use the local server with a simple get to see the headers coming from the proxy.
-Example url: http://localhost:9100/https://pt.wikipedia.org/wiki/Batman?authorization=true&clientId=user&secret=12345&checkBlackList=true&customHeaderKey=x-content&customHeader=true&customHeaderValue=1234&customHTML=true
+Example external url: http://localhost:9100/https://pt.wikipedia.org/wiki/Batman?authorization=true&clientId=user&secret=12345&checkBlackList=true&customHeaderKey=x-content&customHeader=true&customHeaderValue=1234&customHTML=true
 
 # proxy 
 in the proxy server i decided to go with a hybrid approach in relation to the customization for the plugins, i have separated
