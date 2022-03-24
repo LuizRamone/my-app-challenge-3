@@ -21,3 +21,5 @@ only thing to do is add the parameters to customize the plugins, here are the li
 
 localserver could also be used to see the response with the command startserver -> localhost:5000/url
 and also a checkSecurity function that is fired when an ip is in the not allowed ip list
+
+index.js is the proxy server file, server.js is th express server file
