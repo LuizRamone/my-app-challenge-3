@@ -10,7 +10,7 @@ send to the proxied server i have separeted like this to not polute the url para
 the second parameter on the url(http://localhost:9100/[url]) is the target server that the proxy will redirect to and then 
 only thing to do is add the parameters to customize the plugins, here are the list of the available plugins that i have added
 
-# parameters
+# parameters for the plugins
 * queryObject.pathRewrite -> this plugin allows the proxy to change some part of the requested url that the proxy will redirect to.(ex: pathRewrite=true)
 * queryObject.authorization -> this plugin will add basic authorization headers into the options and send them to the proxied server. (ex authorization=true, with clientId=user and secret=12345  )
 * queryObject.customHeader -> this plugin is to add a custom header to the request. (customHeader=true with customHeaderKey=x-content and customHeaderValue=123)
