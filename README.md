@@ -1,5 +1,5 @@
 # Usage
-Open postman/insomnia and navigate to http://localhost:9100/[url] , use yarn startserver to use the local server with a simple get to see the headers coming from the proxy.
+Open postman/insomnia or other api platform and navigate to http://localhost:9100/[url] , use yarn startserver to use the local server with a simple get to see the headers coming from the proxy.
 Example external url: http://localhost:9100/https://pt.wikipedia.org/wiki/Batman?authorization=true&clientId=user&secret=12345&checkBlackList=true&customHeaderKey=x-content&customHeader=true&customHeaderValue=1234&customHTML=true
 
 # proxy 
