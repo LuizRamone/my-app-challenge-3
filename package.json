@@ -1,0 +1,16 @@
+{
+  "name": "my-app-challenge-3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "config": "^3.3.7"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "startserver": "nodemon server.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
