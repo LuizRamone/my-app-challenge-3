@@ -19,7 +19,7 @@ and also a checkSecurity function that is fired when an ip is in the not allowed
 
 */
 
-var url = require("url"),
+let url = require("url"),
   http = require("http"),
   https = require("https"),
   util = require("util");
@@ -34,16 +34,16 @@ const IP_NOTALLOWED = config.get("proxyServer.ipnotallowed");
 const CUSTOM_HTML = config.get("proxyServer.customhtml");
 
 //creation of the http request server
-var proxyServer = http.createServer(function (req, res) {
+let proxyServer = http.createServer(function (req, res) {
   //get the requested url without the proxy url that will be used as redirect, the substring is to remove the first / off the url
-  var reqUrl = req.url.substr(1);
+  let reqUrl = req.url.substr(1);
   //object to separate all parameters that was requested in the client
   const queryObject = url.parse(req.url, true).query;
 
   util.log("URL requested: " + reqUrl + "\n");
 
   //plugin to change the url on the options object, removing some piece that you dont need
-  var options = queryObject.pathRewrite
+  let options = queryObject.pathRewrite
     ? url.parse(reqUrl.replace(queryObject.pathRewrite, ""))
     : url.parse(reqUrl);
   //options to send in the request
@@ -52,7 +52,7 @@ var proxyServer = http.createServer(function (req, res) {
   options.agent = false;
   options.headers["host"] = options.host;
   //clean the ip to compare with the config file
-  var ip = req.connection.remoteAddress.replace("::ffff:", "");
+  let ip = req.connection.remoteAddress.replace("::ffff:", "");
   //plugin to check if the ip is not allowed, and if it is fire the checkSecurity method and end the connection with a not allowed message
   if (IP_NOTALLOWED.indexOf(ip) > -1 && IP_NOTALLOWED != "") {
     let msg = "IP " + ip + " is not allowed to use this proxy";
@@ -74,7 +74,7 @@ var proxyServer = http.createServer(function (req, res) {
         queryObject.customHeaderValue)
     : null;
   //creation of the client request with all the options configurations, http and htpps support
-  var server = (options.protocol == "https:" ? https : http).request(
+  let server = (options.protocol == "https:" ? https : http).request(
     options,
     function (serverResponse) {
       //plugin to check in the request if the host is in blacklist on the config file
@@ -109,7 +109,7 @@ proxyServer.listen(PORT);
 
 //security function to valid the ip passed if the ip is not allowed show the security violation message and end the connection
 function checkSecurity(request, response, msg) {
-  var ip = request.connection.remoteAddress;
+  let ip = request.connection.remoteAddress;
   msg =
     "((SECURITY VIOLATION)), " +
     ip +
